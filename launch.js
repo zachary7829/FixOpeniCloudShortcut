@@ -1,3 +1,13 @@
 var currentURL = window.location.href;
-let result = currentURL.replace("https://www.icloud.com/shortcuts/", "shortcuts://");
-window.open(result, '_blank');
+if (!(currentURL.includes("/api/"))) {
+  let result = currentURL.replace("icloud.com/shortcuts/", "");
+  result = result.replace("https", "");
+  result = result.replace("http", "");
+  result = result.replace(":", "");
+  result = result.replace("/", "");
+  result = result.replace(".", "");
+  result = result.replace("www", "");
+  result = result.replace(".html", "");
+  result = "shortcuts://shortcuts/" + result;
+  window.open(result, '_blank');
+}
