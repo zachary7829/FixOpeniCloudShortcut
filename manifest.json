@@ -1,0 +1,22 @@
+{
+    "name": "Fix Open iCloud Shortcut",
+    "version": "0.0.0.1",
+    "manifest_version": 2,
+    "description": "An extension that fixes opening iCloud shortcuts on Edge.",
+    "icons": {
+        "16": "shortcuticon16.png",
+        "48": "shortcuticon48.png",
+        "128": "shortcuticon128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "shortcuticon16.png",
+            "48": "shortcuticon48.png",
+            "128": "shortcuticon128.png"
+        }
+    },
+    "content_scripts": [{
+        "matches": ["https://www.icloud.com/shortcuts/*"],
+        "js": ["launch.js"]
+    }]
+}
